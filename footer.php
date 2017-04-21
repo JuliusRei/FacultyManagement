@@ -28,3 +28,5 @@
     <script src="js/form-component.js"></script>
     <!-- custome script for all page -->
     <script src="js/scripts.js"></script>
+        <script src="dataTables/jquery.dataTables.js"></script>
+    <script src="dataTables/dataTables.bootstrap.js"></script>  
