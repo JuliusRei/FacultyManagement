@@ -1,5 +1,4 @@
-<?php require("header.php");
-require("connection.php");?>
+<?php require("header.php");?>
 <body >
 	<?php require("navigator.php");?>	
 	<form method = POST>

@@ -1,5 +1,4 @@
-<?php require("header.php");
-	  require("connection.php");?>
+<?php require("header.php");?>
 <body >
 	<?php require("navigator.php");?>	
 	<form method=POST>	
@@ -31,11 +30,6 @@
 										<div class="col-lg-12">
 											<h4>Full Name:</h4>
 										</div>
-
-										<div class="form-group col-lg-4 col-sm-12 col-xs-12 col-md-4">
-											<label class="sr-only" for="LName">Family name</label>
-											<input type="text" class="form-control" name="LName" placeholder="Family Name" required>
-										</div>
 										<div class="form-group col-lg-3 col-sm-12 col-xs-12 col-md-3">
 											<label class="sr-only" for="FName">First Name</label>
 											<input type="text" class="form-control" name="FName" placeholder="First Name" required>
@@ -48,6 +42,12 @@
 											<label class="sr-only" for="FName">Middle Name</label>
 											<input type="text" class="form-control" name="MidI" placeholder="M.I.">
 										</div>      
+										<div class="form-group col-lg-4 col-sm-12 col-xs-12 col-md-4">
+											<label class="sr-only" for="LName">Family name</label>
+											<input type="text" class="form-control" name="LName" placeholder="Family Name" required>
+										</div>
+										
+										
 										<div class="form-group col-lg-1 col-sm-12 col-xs-12 col-md-1">
 											<label class="sr-only" for="FName">NM</label>
 											<input type="text" class="form-control" name="EName" placeholder="N.E.">
@@ -251,7 +251,7 @@
 						$School = mysqli_real_escape_string($con,$_POST['BSSchool']);
 						$YrGrad = mysqli_real_escape_string($con,$_POST['BSYear']);
 						$DegRemark = mysqli_real_escape_string($con,$_POST['BSRemarks']);
-						mysqli_query($con,"Insert into tbleducAttainment(forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Bachelors', '$Degree', '$School','$YrGrad','$DegRemark')");
+						mysqli_query($con,"Insert into tbleducAttainment(`forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Bachelors', '$Degree', '$School','$YrGrad','$DegRemark')");
 
 					}
 					if(!empty($_POST['MasterName']) && !empty($_POST['MasterSchool']) && !empty($_POST['MasterYear']) && !empty($_POST['MasterRemarks'])){
@@ -259,7 +259,7 @@
 						$MSchool = mysqli_real_escape_string($con,$_POST['MasterSchool']);
 						$MYrGrad = mysqli_real_escape_string($con,$_POST['MasterYear']);
 						$MDegRemark = mysqli_real_escape_string($con,$_POST['MasterRemarks']);
-						mysqli_query($con,"Insert into tbleducAttainment(forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Masters', '$MDegree', '$MSchool','$MYrGrad','$MDegRemark')");
+						mysqli_query($con,"Insert into tbleducAttainment(`forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Masters', '$MDegree', '$MSchool','$MYrGrad','$MDegRemark')");
 						echo "<script>alert('worked');</script>";
 					}
 					if(!empty($_POST['DoctorName']) && !empty($_POST['DoctorSchool']) && !empty($_POST['DoctorYear']) && !empty($_POST['DoctorRemarks'])){
@@ -267,7 +267,7 @@
 						$YSchool = mysqli_real_escape_string($con,$_POST['DoctorSchool']);
 						$YYrGrad = mysqli_real_escape_string($con,$_POST['DoctorYear']);
 						$YDegRemark = mysqli_real_escape_string($con,$_POST['DoctorRemarks']);
-						mysqli_query($con,"Insert into tbleducAttainment (forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Doctors', '$YDegree', '$YSchool','$YYrGrad','$YDegRemark')");
+						mysqli_query($con,"Insert into tbleducAttainment (`forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo','Doctors', '$YDegree', '$YSchool','$YYrGrad','$YDegRemark')");
 						echo "<script>alert('worked');</script>";	
 					}					
 					if(isset($_POST['Email'])){
@@ -308,7 +308,7 @@
 								$curSchool = mysqli_real_escape_string($con,$school[$ctr]);
 								$curYear = mysqli_real_escape_string($con,$Year[$ctr]);
 								$curRemark = mysqli_real_escape_string($con,$Remarks[$ctr]);
-								mysqli_query($con,"Insert into tbleducAttainment(forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo', 'Other Degree','$curCourse','$curSchool','$curYear','$curRemark')");
+								mysqli_query($con,"Insert into tbleducAttainment(`forEmployeeNo`, `strType`, `strDegree`, `strSchool`, `strYearGraduated`, `strRemarks`) values ('$EmpNo', 'Other Degree','$curCourse','$curSchool','$curYear','$curRemark')");
 								echo "<script>alert('$curCourse - $curSchool - $curYear - $curRemark')</script>";
 							}
 						}
