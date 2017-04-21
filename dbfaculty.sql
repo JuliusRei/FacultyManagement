@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2017 at 01:36 PM
+-- Generation Time: Apr 21, 2017 at 06:59 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.5.30
 
@@ -40,7 +40,29 @@ CREATE TABLE `tblcontactfaculty` (
 INSERT INTO `tblcontactfaculty` (`intID`, `forEmployeeNo`, `strContactNo`, `strContactType`) VALUES
 (1, '2013888712', '09827341765', 'Cellphone'),
 (2, '2013888712', '2214567', 'Telephone'),
-(3, '2013888712', '2237671', 'Fax');
+(3, '2013888712', '2237671', 'Fax'),
+(4, '20134324343', '1129849', 'Telephone'),
+(5, '20134324343', '09223948594', 'Cellphone'),
+(6, '2006434433', '09445678312', 'Telephone');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcurrentsem`
+--
+
+CREATE TABLE `tblcurrentsem` (
+  `intID` int(11) NOT NULL,
+  `strSem` varchar(20) NOT NULL,
+  `strYear` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblcurrentsem`
+--
+
+INSERT INTO `tblcurrentsem` (`intID`, `strSem`, `strYear`) VALUES
+(1, '1st', '2017');
 
 -- --------------------------------------------------------
 
@@ -67,7 +89,10 @@ INSERT INTO `tbleducattainment` (`intID`, `forEmployeeNo`, `strType`, `strDegree
 (2, '2013888712', 'Doctors', 'Information Technology', 'PUP', '2012', 'Passed'),
 (3, '2013888712', 'Masters', 'Information Technology', 'PUP', '2010', 'Passed'),
 (4, '2013888712', 'Other Degree', 'Mechanical Engineering', 'PUP', '2016', 'Passed'),
-(5, '2013888712', 'Other Degree', 'Psychology', 'PUP', '2014', 'Passed');
+(5, '2013888712', 'Other Degree', 'Psychology', 'PUP', '2014', 'Passed'),
+(6, '20134324343', 'Bachelors', 'Computer Engineering', 'La Consolacion Colleges', '2010', 'Passed'),
+(7, '2006434433', 'Bachelors', 'Information Technology', 'Technological Institute of the Philippines', '2003', 'Passed'),
+(8, '2006434433', 'Masters', 'InInformation Technology', 'PUP', '2007', 'Passed');
 
 -- --------------------------------------------------------
 
@@ -88,7 +113,9 @@ CREATE TABLE `tblemailfaculty` (
 INSERT INTO `tblemailfaculty` (`intID`, `forEmployeeNo`, `strEmailAddress`) VALUES
 (1, '2013888712', 'JCruz@gmail.com'),
 (2, '2013888712', 'JCSantiago@outlook.ph'),
-(3, '2013888712', 'JDCruz@yahoo.com');
+(3, '2013888712', 'JDCruz@yahoo.com'),
+(4, '20134324343', 'JanE@yahho.com'),
+(5, '2006434433', 'GCanet@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -105,6 +132,13 @@ CREATE TABLE `tblfacultyeval` (
   `strYear` varchar(10) NOT NULL,
   `forEmployeeNo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblfacultyeval`
+--
+
+INSERT INTO `tblfacultyeval` (`intStudentEval`, `intPeerEval`, `intSelfEval`, `intSupervisorEval`, `strSemester`, `strYear`, `forEmployeeNo`) VALUES
+(100, 100, 60, 50, '1st', '2017', '2006434433');
 
 -- --------------------------------------------------------
 
@@ -150,6 +184,8 @@ CREATE TABLE `tblgeneralinfo` (
 --
 
 INSERT INTO `tblgeneralinfo` (`strEmployeeNo`, `strFamilyName`, `strFirstName`, `charMiddleInitial`, `strMiddleName`, `strNameExtension`, `Department`, `strStreet`, `strPurok`, `strBuildingNo`, `strCity`, `strProvince`, `dtBirthday`, `dtDateofEntry`, `intCurrentRank`, `strStatus`) VALUES
+('2006434433', 'Maravelos', 'Gina', 'C', 'Canet', '', 'IT', 'Binas Street', '2', '111', 'San Jose', 'Laguna', '1985-01-01', '2006-09-01', 2, 'Regular'),
+('20134324343', 'Eugenio', 'Janna Ruth', 'E', 'Espana', '', 'IT', 'Jump Street', '2', '21', 'Cainta', 'Rizal', '1990-07-25', '2017-02-02', 1, 'PT'),
 ('2013888712', 'Cruz', 'Juan', 'S', 'Santiago', 'Jr', 'CS', 'Payak Street', '1', '211', 'Antipolo City', 'Rizal', '1992-01-01', '2008-01-01', 2, 'Regular');
 
 -- --------------------------------------------------------
@@ -192,6 +228,12 @@ CREATE TABLE `tblsubject` (
 --
 ALTER TABLE `tblcontactfaculty`
   ADD PRIMARY KEY (`intID`,`forEmployeeNo`);
+
+--
+-- Indexes for table `tblcurrentsem`
+--
+ALTER TABLE `tblcurrentsem`
+  ADD PRIMARY KEY (`intID`);
 
 --
 -- Indexes for table `tbleducattainment`
@@ -243,17 +285,17 @@ ALTER TABLE `tblsubject`
 -- AUTO_INCREMENT for table `tblcontactfaculty`
 --
 ALTER TABLE `tblcontactfaculty`
-  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbleducattainment`
 --
 ALTER TABLE `tbleducattainment`
-  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tblemailfaculty`
 --
 ALTER TABLE `tblemailfaculty`
-  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `intID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
