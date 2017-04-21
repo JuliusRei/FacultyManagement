@@ -1,0 +1,6 @@
+.content{
+	float:left;
+}
+.padding-remove{
+	padding-left:0px !important;
+}
