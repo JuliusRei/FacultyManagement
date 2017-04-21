@@ -15,13 +15,16 @@ require("connection.php");?>
                                       $query= mysqli_query($con,$sql);
                                       $row = mysqli_fetch_object($query);
                                       echo "<h3>".$row->strFirstName." ".$row->charMiddleInitial." ".$row->strFamilyName." ".$row->strNameExtension."</h3>";
+                                      $sql="Select * from tblRank where intRank = '".$row->intCurrentRank."'";
+                                      $query = mysqli_query($con,$sql);
+                                      $row2= mysqli_fetch_object($query);
                                     ?>
                           </header>
                           <div class="panel-body">
                               <div class="form-inline" role="form">
                                   <div class="form-group col-lg-12 col-md-12 col-xs-12 col-sm-12 " >
                                 	<h4>Employee Number:</h4>
-                                    <div class="form-group col-lg-4 col-md-4 col-xs-12 col-sm-12 padding-remove " >
+                                    <div class="form-group col-lg-2 col-md-2 col-xs-12 col-sm-12 padding-remove " >
                                      <input type=text class ="form-control" readonly value = <?php echo $EmpNo?>>
                                 </div>
                                   
@@ -41,6 +44,19 @@ require("connection.php");?>
                                      <input type=text class ="form-control" readonly value = <?php $date=date_create($row->dtDateofEntry);
                                      															echo date_format($date,"F-d-Y")?>>
                                   </div>
+                                  <div class="form-group col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                                     <h4>Present Rank:</h4>
+                                     <input type=text class ="form-control" readonly value = <?php echo $row->intCurrentRank ?>>
+                                  </div>
+                                  <div class="form-group col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                                     <h4>Salary Grade:</h4>
+                                     <input type=text class ="form-control" readonly value = <?php echo $row2->decSalary ?>>
+                                  </div>
+                                  <div class="form-group col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                                     <h4>Salary Grade:</h4>
+                                     <input type=text class ="form-control" readonly value = <?php echo $row->strStatus ?>>
+                                  </div>
+
                                   
                                   
                               </div>
