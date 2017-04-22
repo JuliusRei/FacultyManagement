@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2017 at 06:59 PM
+-- Generation Time: Apr 22, 2017 at 07:26 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.5.30
 
@@ -62,7 +62,7 @@ CREATE TABLE `tblcurrentsem` (
 --
 
 INSERT INTO `tblcurrentsem` (`intID`, `strSem`, `strYear`) VALUES
-(1, '1st', '2017');
+(1, '1st', '2018-2019');
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,8 @@ CREATE TABLE `tblfacultyeval` (
 --
 
 INSERT INTO `tblfacultyeval` (`intStudentEval`, `intPeerEval`, `intSelfEval`, `intSupervisorEval`, `strSemester`, `strYear`, `forEmployeeNo`) VALUES
-(100, 100, 60, 50, '1st', '2017', '2006434433');
+(100, 100, 70, 90, '1st', '2017-2018', '2006434433'),
+(90, 80, 70, 100, '1st', '2017-2018', '20134324343');
 
 -- --------------------------------------------------------
 
@@ -153,6 +154,19 @@ CREATE TABLE `tblfacultysubjects` (
   `strSemester` varchar(5) NOT NULL,
   `strYear` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblfacultysubjects`
+--
+
+INSERT INTO `tblfacultysubjects` (`forEmployeeNo`, `forSubjectCode`, `strYearandSection`, `strSemester`, `strYear`) VALUES
+('20134324343', 'INTE2003', 'BSIT 2-3', '1st', '2017-2018'),
+('2013888712', 'COMP1234', 'BSIT 1-1', '2nd', '2017-2018'),
+('2013888712', 'COMP1234', 'BSIT 2-1', '1st', '2017-2018'),
+('2013888712', 'COMP1234', 'BSIT 2-2', '1st', '2017-2018'),
+('2013888712', 'COMP1234', 'BSIT 2-2', '1st', '2018-2019'),
+('2013888712', 'INTE2003', 'BSIT 1-2', '2nd', '2017-2018'),
+('2013888712', 'INTE2003', 'BSIT 2-3', '1st', '2017-2018');
 
 -- --------------------------------------------------------
 
@@ -218,6 +232,14 @@ CREATE TABLE `tblsubject` (
   `intUnit` int(11) NOT NULL,
   `strSubjectDesc` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblsubject`
+--
+
+INSERT INTO `tblsubject` (`strSubjectCode`, `intUnit`, `strSubjectDesc`) VALUES
+('COMP1234', 3, 'Programming 1'),
+('INTE2003', 3, 'Computer Software Organization');
 
 --
 -- Indexes for dumped tables

@@ -31,7 +31,7 @@
 									</div>
 									<div class="form-group col-lg-10 col-md-10 col-xs-12 col-sm-12 padding-remove " >
 										<button type=button class= "btn btn-info btn-md"style="float:right">Edit Record</button>
-										<button type=button name="btnAssign" class= "btn btn-success btn-md"style="float:right">Assign Subjects</button>
+										<a type=button name="btnAssign" href = "FacultySubjects.php" class= "btn btn-success btn-md" style="float:right">Assign Subjects</a>
 										<a  name="btnEvaluate" href="FacultyEval.php" class= "btn btn-warning btn-md"style="float:right">Evaluate</a>
 										</div>
 								</div>
@@ -146,7 +146,7 @@
 									<div class="form-inline" role="form">
 										<div class="form-group col-lg-12 col-md-12 col-xs-12 col-sm-12">
 											<h4>Email Addresss:</h4>
-											<table  class="table table-striped table-bordered table-hover" align="center" id = "dataTable"  border = '2' style = 'width:90%'>
+											<table  class="table table-striped table-bordered table-hover" align="center" id = "dataTable3"  border = '2' style = 'width:90%'>
 												<thead>
 													<tr>
 														<th>Type</th>
@@ -196,6 +196,9 @@
 					$(document).ready(function() {
 						$('#dataTable2').dataTable();		  
 					});
+					$(document).ready(function() {
+						$('#dataTable3').dataTable();		  
+					});					
 				</script>
 
 			</body>

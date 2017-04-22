@@ -1,5 +1,6 @@
 <!-- container section end -->
     <!-- javascripts -->
+    
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- nice scroll -->
@@ -17,7 +18,8 @@
     <script src="js/jquery.tagsinput.js"></script>
     
     <!-- colorpicker -->
-   
+   <script src="selectize/dist/js/standalone/selectize.js"></script>
+   <script src="selectize/examples/js/index.js"></script>
     <!-- bootstrap-wysiwyg -->
     <script src="js/jquery.hotkeys.js"></script>
     <script src="js/bootstrap-wysiwyg.js"></script>

@@ -25,7 +25,9 @@
     <!-- color picker -->
     
     <!-- Custom styles -->
+    <link href="dataTables/dataTables.bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="selectize/dist/css/selectize.bootstrap3.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/Content.css" rel="stylesheet"/>
 

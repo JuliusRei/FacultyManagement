@@ -1,13 +1,13 @@
 <?php require("header.php");?>
 <body >
-	<?php require("navigator.php");?>	
-		<?php require("footer.php");?>
+	<?php require("navigator.php");?>
 		<section id="main-content">		
 		<section class="wrapper ">	
 			<div class="row ">
 				<div class="col-lg-10 col-xs-10 col-md-12 col-sm-12">
 					<section class="panel">
 						<?php
+
 						$EmpNo = $_SESSION['EmpNo'];
 						$query = mysqli_query($con,"Select * from tblcurrentsem");
 						$row1= mysqli_fetch_object($query);
@@ -19,6 +19,7 @@
 						if($flag>0){
 							$row=mysqli_fetch_object($query);
 						}
+						require('addEval.php');
 						?>
 						<header class="panel-heading" style = "padding-top:5px">
 						<?php echo $_SESSION['Name']?> - Faculty Evaluation
@@ -57,13 +58,11 @@
 							<td><?php if($flag>0){echo ($row->intSupervisorEval+$row->intSelfEval+$row->intPeerEval+$row->intStudentEval)/4;}
 									  else{echo "-";}?></td>
 							</tr>
-
-
 						</tbody>
 						</table>
 						<div class = "col-lg-12 col-sm-12 col-md-12 col-xs-12">
-						<button class = "btn btn-info btn md" <?php if($flag>0){echo "disabled";}?>>Add Evaluation</button>
-						<button class = "btn btn-success btn md" <?php if($flag==0){echo "disabled";}?>>Edit Evaluation</button>
+						<button class = "btn btn-info btn md" <?php if($flag>0){echo "disabled";}?> onclick = "Evaluate(1)" data-toggle="modal" data-target="#AddEval">Add Evaluation</button>
+						<button class = "btn btn-success btn md" <?php if($flag==0){echo "disabled";}?> onclick = "Evaluate(2)" data-toggle="modal" data-target="#AddEval">Edit Evaluation</button>
 						</div>
 						</div>
 
@@ -71,10 +70,23 @@
 				</div>
 			</div>
 		</section>
+		<?php require("footer.php");?>
 	<script>
 		$(document).ready(function() {
 			$('#dataTable').dataTable();		  
 		});
+
+		function Evaluate(val){
+			$.ajax({
+			type: "POST",
+      		url: "EvaluateModal.php",
+      		data: 'value=' + val,
+			success: function(data){
+      		//alert(data);
+      		$("#Evaluation").html(data);
+      		}
+      		});
+      		}
 	</script>
 	
 </body>
