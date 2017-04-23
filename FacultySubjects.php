@@ -1,7 +1,8 @@
 <?php require("header.php");?>
 <body >
 	<?php require("navigator.php");
-	require('addSubjectModal.php');?>	
+	require('addSubjectModal.php');
+	require('subjectModal.php');?>	
 	<section id="main-content">		
 		<section class="wrapper ">	
 			<div class="row ">
@@ -25,25 +26,25 @@
 													<tr>
 														<th>Subject Code</th>
 														<th>Description</th>
-														<th>Units</th>
 														<th>Section</th>
+														<th>Schedule</th>
 														<th>Action</th>
 													</tr>
 												</thead>
 												<tbody>
 												<?php
 												
-												$query = mysqli_query($con,"Select strSubjectCode,strYearandSection,intUnit,strSubjectDesc from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = '1st' AND  forEmployeeNo = '$EmpNo'");
+												$query = mysqli_query($con,"Select * from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = '1st' AND  forEmployeeNo = '$EmpNo'");
 												$queryCount = mysqli_num_rows($query);
 												if($queryCount>0){
 												while($row = mysqli_fetch_object($query)){?>
 												<tr>
 												<td><?php echo $row->strSubjectCode;?></td>
 												<td><?php echo $row->strSubjectDesc;?></td>
-												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
-													<button type = button onclick = "Edit('1st',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."'";?>)" class="btn-xs btn btn-success">Edit</button></td>
+												<td><?php echo $row->strRoom."-".$row->strSchedule?></td>
+												<td><button type = button class="btn-xs btn btn-danger" onclick = "Delete('1st',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal">Delete</button>
+													<button type = button onclick = "Edit('1st',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal" >Edit</button></td>
 												
 												</tr>
 												<?php
@@ -59,25 +60,25 @@
 													<tr>
 														<th>Subject Code</th>
 														<th>Description</th>
-														<th>Units</th>
 														<th>Section</th>
+														<th>Schedule</th>
 														<th>Action</th>
 													</tr>
 												</thead>
 												<tbody>
 												<?php
 												
-												$query = mysqli_query($con,"Select strSubjectCode,strYearandSection,intUnit,strSubjectDesc from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = '2nd' AND  forEmployeeNo = '$EmpNo'");
+												$query = mysqli_query($con,"Select * from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = '2nd' AND  forEmployeeNo = '$EmpNo'");
 												$queryCount = mysqli_num_rows($query);
 												if($queryCount>0){
 												while($row = mysqli_fetch_object($query)){?>
 												<tr>
 												<td><?php echo $row->strSubjectCode;?></td>
 												<td><?php echo $row->strSubjectDesc;?></td>
-												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
-													<button type = button class="btn-xs btn btn-success">Edit</button></td>
+												<td><?php echo $row->strRoom."-".$row->strSchedule?></td>
+												<td><button type = button class="btn-xs btn btn-danger" onclick = "Delete('2nd',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal">Delete</button>
+													<button type = button class="btn-xs btn btn-success" onclick = "Edit('2nd',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal">Edit</button></td>
 												</tr>
 												<?php
 													}
@@ -92,25 +93,25 @@
 													<tr>
 														<th>Subject Code</th>
 														<th>Description</th>
-														<th>Units</th>
 														<th>Section</th>
+														<th>Schedule</th>
 														<th>Action</th>
 													</tr>
 												</thead>
 												<tbody>
 												<?php
 												
-												$query = mysqli_query($con,"Select strSubjectCode,strYearandSection,intUnit,strSubjectDesc from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = 'Summer' AND  forEmployeeNo = '$EmpNo'");
+												$query = mysqli_query($con,"Select * from tblFacultySubjects as a inner join tblsubject as b on a.forSubjectCode = b.strSubjectCode  where strYear = '$yr' AND strSemester = 'Summer' AND  forEmployeeNo = '$EmpNo'");
 												$queryCount = mysqli_num_rows($query);
 												if($queryCount>0){
 												while($row = mysqli_fetch_object($query)){?>
 												<tr>
 												<td><?php echo $row->strSubjectCode;?></td>
 												<td><?php echo $row->strSubjectDesc;?></td>
-												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
-													<button type = button class="btn-xs btn btn-success">Edit</button></td>
+												<td><?php echo $row->strRoom."-".$row->strSchedule?></td>
+												<td><button type = button class="btn-xs btn btn-danger" onclick = "Delete('Summer',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal">Delete</button>
+													<button type = button class="btn-xs btn btn-success" onclick = "Edit('Summer',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."','".$row->strYearandSection."'";?>)" class="btn-xs btn btn-success" data-toggle="modal" data-target="#subjModal">Edit</button></td>
 												</tr>
 												<?php
 													}
@@ -154,14 +155,26 @@
 					
 				});
 
-				function Edit(sem,year,subjCode,EmpNo){
+				function Edit(sem,year,subjCode,EmpNo,section){
 					$.ajax({
 					type: "POST",
 		      		url: "EditSubject.php",
-		      		data: 'sem='+sem+'&year='+year+'&subjCode='+subjCode+'&EmpNo='+EmpNo,
+		      		data: 'sem='+sem+'&year='+year+'&subjCode='+subjCode+'&EmpNo='+EmpNo+'&section='+section,
 					success: function(data){
 		      		//alert(data);
-		      		$("#Description").html(data);
+		      		$("#Desc").html(data);
+		      		}
+		      		});
+
+				}
+				function Delete(sem,year,subjCode,EmpNo,section){
+					$.ajax({
+					type: "POST",
+		      		url: "DeleteSubject.php",
+		      		data: 'sem='+sem+'&year='+year+'&subjCode='+subjCode+'&EmpNo='+EmpNo+'&section='+section,
+					success: function(data){
+		      		//alert(data);
+		      		$("#Desc").html(data);
 		      		}
 		      		});
 		      		}

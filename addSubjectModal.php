@@ -162,7 +162,7 @@
 
 		</div>
 		<div id ="addField" class = "row col-sm-12 col-xs 12 col-lg-12 col-md-12">
-			<button style="float:right;" type = submit name="add_Subject" class="btn btn-md btn-info" href="#"><i class="icon_plus_alt2"></i> Add Subject</button></div>
+			<button style="float:right;" type = submit name="add_Subject" class="btn btn-md btn-info" href="#"><i class="icon_plus_alt2" onclick="confirm('Do you want to save this record?')"></i> Add Subject</button></div>
 			<div class="modal-footer">
 
 			</div>

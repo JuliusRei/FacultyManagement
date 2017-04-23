@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2017 at 07:18 AM
+-- Generation Time: Apr 23, 2017 at 09:49 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.5.30
 
@@ -151,7 +151,7 @@ CREATE TABLE `tblfacultysubjects` (
   `forEmployeeNo` varchar(50) NOT NULL,
   `forSubjectCode` varchar(50) NOT NULL,
   `strYearandSection` varchar(50) NOT NULL,
-  `strSemester` varchar(5) NOT NULL,
+  `strSemester` varchar(10) NOT NULL,
   `strYear` varchar(50) NOT NULL,
   `strRoom` varchar(50) NOT NULL,
   `strSchedule` varchar(50) NOT NULL
@@ -162,12 +162,13 @@ CREATE TABLE `tblfacultysubjects` (
 --
 
 INSERT INTO `tblfacultysubjects` (`forEmployeeNo`, `forSubjectCode`, `strYearandSection`, `strSemester`, `strYear`, `strRoom`, `strSchedule`) VALUES
+('2006434433', 'COMP1234', 'BSIT 2-3', '1st', '2017-2018', 'E402', 'T/TH'),
 ('20134324343', 'INTE2003', 'BSIT 2-3', '1st', '2017-2018', 'E408', 'M/TH'),
-('2013888712', 'COMP1234', 'BSIT 1-1', '2nd', '2017-2018', 'E501/E407', 'M/TH'),
-('2013888712', 'COMP1234', 'BSIT 2-1', '1st', '2017-2018', 'E501/E407', 'M/TH'),
-('2013888712', 'COMP1234', 'BSIT 2-2', '1st', '2017-2018', 'E501/E407', 'M/TH'),
+('2013888712', 'COMP1234', 'BSIT 1-3', '2nd', '2017-2018', 'E402', 'M 9:00AM - 3:00PM'),
+('2013888712', 'COMP1234', 'BSIT 2-2', '1st', '2017-2018', 'E507', 'M/TH 9:30AM-11:00AM'),
 ('2013888712', 'COMP1234', 'BSIT 2-2', '1st', '2018-2019', 'E501/E407', 'M/TH'),
 ('2013888712', 'INTE2003', 'BSIT 1-2', '2nd', '2017-2018', 'E501/E407', 'M/TH'),
+('2013888712', 'INTE2003', 'BSIT 2-1', 'Summer', '2017-2018', 'E501', 'M 9:00AM - 3:00PM'),
 ('2013888712', 'INTE2003', 'BSIT 2-3', '1st', '2017-2018', 'E501/E407', 'M/TH');
 
 -- --------------------------------------------------------
