@@ -26,7 +26,7 @@
 					</div>
 
 					<div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-5 col-md-5">
 							<select id="selectize_1" class="demo-default"  name = "Subjects[]" data-placeholder="Select a Subject.">
 								<?php require("connection.php");
 								$query = mysqli_query($con,"Select * from tblSubject");
@@ -39,13 +39,21 @@
 
 						</div>
 
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6" style="padding-left:0px">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
 							<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Room[]" class="form-control" placeholder="Room"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-3 col-md-3" style="padding-left:0px">
+							<input type=text name="Schedule[]" class="form-control" placeholder="Schedule"> 	
 
 						</div>
 					</div>
 					<div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-5 col-md-5">
 							<select id="selectize_2" class="demo-default"  name = "Subjects[]" data-placeholder="Select a Subject.">
 								<?php require("connection.php");
 								$query = mysqli_query($con,"Select * from tblSubject");
@@ -58,13 +66,21 @@
 
 						</div>
 
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6" style="padding-left:0px">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
 							<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Room[]" class="form-control" placeholder="Room"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-3 col-md-3" style="padding-left:0px">
+							<input type=text name="Schedule[]" class="form-control" placeholder="Schedule"> 	
 
 						</div>
 					</div>
 					<div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-5 col-md-5">
 							<select id="selectize_3" class="demo-default"  name = "Subjects[]" data-placeholder="Select a Subject.">
 								<?php require("connection.php");
 								$query = mysqli_query($con,"Select * from tblSubject");
@@ -77,12 +93,21 @@
 
 						</div>
 
-						<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6" style="padding-left:0px">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
 							<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
 
 						</div>
-					</div><div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
-					<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6">
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Room[]" class="form-control" placeholder="Room"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-3 col-md-3" style="padding-left:0px">
+							<input type=text name="Schedule[]" class="form-control" placeholder="Schedule"> 	
+
+						</div>
+					</div>
+					<div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
+					<div class = "form-group col-sm-12 col-xs-12 col-lg-5 col-md-5">
 						<select id="selectize_4" class="demo-default"  name = "Subjects[]" data-placeholder="Select a Subject.">
 							<?php require("connection.php");
 							$query = mysqli_query($con,"Select * from tblSubject");
@@ -95,12 +120,20 @@
 
 					</div>
 
-					<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6" style="padding-left:0px">
-						<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
+					<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
 
-					</div>
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Room[]" class="form-control" placeholder="Room"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-3 col-md-3" style="padding-left:0px">
+							<input type=text name="Schedule[]" class="form-control" placeholder="Schedule"> 	
+
+						</div>
 				</div><div  class = "row form-inline col-sm-12 col-xs 12 col-lg-12 col-md-12">
-				<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6">
+				<div class = "form-group col-sm-12 col-xs-12 col-lg-5 col-md-5">
 					<select id="selectize_5" class="demo-default"  name = "Subjects[]" data-placeholder="Select a Subject.">
 						<?php require("connection.php");
 						$query = mysqli_query($con,"Select * from tblSubject");
@@ -113,10 +146,18 @@
 
 				</div>
 
-				<div class = "form-group col-sm-12 col-xs-12 col-lg-6 col-md-6" style="padding-left:0px">
-					<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
+				<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Section[]" class="form-control" placeholder="Section"> 	
 
-				</div>
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-2 col-md-2" style="padding-left:0px">
+							<input type=text name="Room[]" class="form-control" placeholder="Room"> 	
+
+						</div>
+						<div class = "form-group col-sm-12 col-xs-12 col-lg-3 col-md-3" style="padding-left:0px">
+							<input type=text name="Schedule[]" class="form-control" placeholder="Schedule"> 	
+
+						</div>
 			</div>
 
 		</div>
@@ -138,13 +179,17 @@ if (isset($_POST['add_Subject'])){
 	$yr = $row1->strYear;
 	$subj = $_POST['Subjects'];
 	$sec = $_POST['Section'];
+	$rm = $_POST['Room'];
+	$sched = $_POST['Schedule'];	
 	$sem=$_POST['Semester'];
 
 	for($ctr = 0;$ctr<5;$ctr++){
 		if(!empty($sec[$ctr])){
 			$curSubj = $subj[$ctr];
 			$curSect = $sec[$ctr];
-			mysqli_query($con,"Insert into tblfacultysubjects values ('$EmpNo','$curSubj','$curSect','$sem','$yr')");
+			$curRoom = $rm[$ctr];
+			$curSched = $sched[$ctr];
+			mysqli_query($con,"Insert into tblfacultysubjects values ('$EmpNo','$curSubj','$curSect','$sem','$yr','$curRoom','$curSched')");
 		}
 
 	}
