@@ -42,7 +42,9 @@
 												<td><?php echo $row->strSubjectDesc;?></td>
 												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td></td>
+												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
+													<button type = button onclick = "Edit('1st',<?php echo "'".$yr."','".$row->strSubjectCode."','".$EmpNo."'";?>)" class="btn-xs btn btn-success">Edit</button></td>
+												
 												</tr>
 												<?php
 													}
@@ -74,7 +76,8 @@
 												<td><?php echo $row->strSubjectDesc;?></td>
 												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td></td>
+												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
+													<button type = button class="btn-xs btn btn-success">Edit</button></td>
 												</tr>
 												<?php
 													}
@@ -106,7 +109,8 @@
 												<td><?php echo $row->strSubjectDesc;?></td>
 												<td><?php echo $row->intUnit;?></td>
 												<td><?php echo $row->strYearandSection;?></td>
-												<td></td>
+												<td><button type = button class="btn-xs btn btn-danger">Delete</button>
+													<button type = button class="btn-xs btn btn-success">Edit</button></td>
 												</tr>
 												<?php
 													}
@@ -149,6 +153,21 @@
 					allowEmptyOption: false
 					
 				});
+
+				function Edit(sem,year,subjCode,EmpNo){
+					$.ajax({
+					type: "POST",
+		      		url: "EditSubject.php",
+		      		data: 'sem='+sem+'&year='+year+'&subjCode='+subjCode+'&EmpNo='+EmpNo,
+					success: function(data){
+		      		//alert(data);
+		      		$("#Description").html(data);
+		      		}
+		      		});
+		      		}
+				
+
+				
 				</script>
 
 			</body>
