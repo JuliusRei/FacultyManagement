@@ -110,7 +110,7 @@
 											<input type="text" class="form-control" name="Purok" placeholder="Purok" >
 										</div>
 										<div class="form-group col-lg-3 col-sm-12 col-xs-12 col-md-3">
-											<input type="text" class="form-control" name="City" placeholder="City" >
+											<input type="text" class="form-control" name="City" placeholder="City/Municipality" >
 										</div>   
 										<div class="form-group col-lg-3 col-sm-12 col-xs-12 col-md-3">
 											<input type="text" class="form-control" name="Province" placeholder="Province">
