@@ -38,10 +38,6 @@
 											<label class="sr-only" for="FName">Middle Name</label>
 											<input type="text" class="form-control" name="MName" placeholder="Middle Name" >
 										</div>   
-										<div class="form-group col-lg-1 col-sm-12 col-xs-12 col-md-1">
-											<label class="sr-only" for="FName">Middle Name</label>
-											<input type="text" class="form-control" name="MidI" placeholder="M.I.">
-										</div>      
 										<div class="form-group col-lg-4 col-sm-12 col-xs-12 col-md-4">
 											<label class="sr-only" for="LName">Family name</label>
 											<input type="text" class="form-control" name="LName" placeholder="Family Name" required>
@@ -235,8 +231,16 @@
 					$Dept = $_POST['Dept'];
 					$Rank = $_POST['Rank'];
 					$FStatus = $_POST['FStatus'];
-					if(empty($_POST["MName"])){$MName = "";} else{$MName =  mysqli_real_escape_string($con,$_POST["MName"]);}
-					if(empty($_POST["MidI"])){$MI = "";} else{$MI = $_POST["MidI"];}
+
+					if(empty($_POST["MName"])){
+						$MName = "";
+						$MI= "";} 
+						else{
+						$M= $_POST["MName"];
+						$len = strlen($M)-1;
+						$MI= substr($M, 0,-($len));
+						$MName =  mysqli_real_escape_string($con,$_POST["MName"]);}
+
 					if(empty($_POST["EName"])){$EName = "";} else{$EName = $_POST["EName"];}
 					if(empty($_POST['Street'])){$Street = "";}else{$Street= mysqli_real_escape_string($con,$_POST['Street']);}
 					if(empty($_POST['Purok'])){$Purok = "";}else{$Purok= mysqli_real_escape_string($con,$_POST['Purok']);}

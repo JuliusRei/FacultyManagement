@@ -18,13 +18,23 @@
           <div id="sidebar"  class="nav-collapse content ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
-                  <li class="active">
-                      <a class="" href="index.html">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                  <li>                     
+                      <a class="" href="viewFaculty.php">
+                          <i class="icon_pencil-edit"></i>
+                          <span>View Faculty</span>
+                          
+                      </a>
+                                         
+                  </li>
+				
+                  
+                  <li>
+                      <a class="" href="addFaculty.php">
+                          <i class="icon_contacts"></i>
+                          <span>Add Faculty</span>
                       </a>
                   </li>
-				  <li class="sub-menu">
+                    <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>Maintenance</span>
@@ -35,21 +45,6 @@
                           <li><a class="" href="form_validation.html">Subject</a></li>
                       </ul>
                   </li>       
-                  
-                  <li>
-                      <a class="" href="addFaculty.php">
-                          <i class="icon_contacts"></i>
-                          <span>Add Faculty</span>
-                      </a>
-                  </li>
-                  <li>                     
-                      <a class="" href="viewFaculty.php">
-                          <i class="icon_pencil-edit"></i>
-                          <span>View Faculty</span>
-                          
-                      </a>
-                                         
-                  </li>
                              
                
                   

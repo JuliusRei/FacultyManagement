@@ -25,7 +25,7 @@
 <input type = "text" class = "form-control" name = "Schedule" value='<?php echo $row->strSchedule; ?>' disabled>
 </div>
 <div class = "col-sm-12 col-xs-12 col-lg-12 col-md-12" style="padding-top:5%">
-<button type = "submit" class = "btn btn-sm btn-danger" name = "btnDelete" value='<?php echo $row->strSubjectCode; ?>' onclick="confirm('Do you want to save these changes?')">Delete Record</button>
+<button type = "submit" class = "btn btn-sm btn-danger" name = "btnDelete" value='<?php echo $row->strSubjectCode; ?>' onclick="return confirm('Do you want to save these changes?')">Delete Record</button>
 <input type = text name = 'Semester' value = '<?php echo $sem; ?>' hidden>
 <input type = text name = 'Year' value = '<?php echo $year; ?>' hidden>
 <input type = text name = 'prevSection' value = '<?php echo $prevsection; ?>' hidden>
