@@ -111,7 +111,7 @@ if($type ==2){
 			<input class="form-control" name="Type" readonly value = '<?php echo $row->strType ?>' type="text" placeholder="CourseName" />
 			</div>
 			<div class="form-group col-xs-12 col-sm-12 col-lg-12 col-md-12"> 
-			<h5>Degree Na,e:</h5>
+			<h5>Degree Name:</h5>
 				<input class="form-control" name="DegreeName" type="text" placeholder="CourseName" readonly value = '<?php echo $row->strDegree ?>' />
 			</div> 
 			<div class="form-group col-xs-12 col-sm-12 col-lg-12 col-md-12">

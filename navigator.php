@@ -41,8 +41,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="form_component.html">Rank</a></li>                          
-                          <li><a class="" href="form_validation.html">Subject</a></li>
+                          <li><a class="" href="rankMaintenance.php">Rank</a></li>                          
+                          <li><a class="" href="subjectMaintenance.php">Subject</a></li>
                       </ul>
                   </li>       
                              
