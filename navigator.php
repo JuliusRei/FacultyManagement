@@ -19,7 +19,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li>                     
-                      <a class="" href="viewFaculty.php">
+                      <a class="" href="index.php">
                           <i class="icon_pencil-edit"></i>
                           <span>View Faculty</span>
                           
